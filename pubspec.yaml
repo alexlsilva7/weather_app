@@ -39,6 +39,8 @@ dependencies:
   http: ^0.13.5
   provider: ^6.0.4
   flutter_typeahead: ^4.1.1
+  app_ui:
+    path: app_ui
 
 dev_dependencies:
   flutter_test:
