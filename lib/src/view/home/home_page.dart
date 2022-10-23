@@ -3,6 +3,7 @@ import 'package:flutter_typeahead/flutter_typeahead.dart';
 import 'package:provider/provider.dart';
 import 'package:weather_app/src/controller/autocomplete_controller.dart';
 import 'package:weather_app/src/model/autocomplete_model.dart';
+import 'package:weather_app/theme_provider.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -11,7 +12,18 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Home Page'),
+        title: const Text('Wather App'),
+        centerTitle: true,
+        actions: [
+          IconButton(
+            icon: const Icon(
+              Icons.brightness_6,
+            ),
+            onPressed: () {
+              context.read<ThemeProvider>().toggleTheme();
+            },
+          ),
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -34,8 +46,14 @@ class HomePage extends StatelessWidget {
                 );
               },
               onSuggestionSelected: (AutoCompleteModel suggestion) {
-                print(suggestion.localizedName);
+                debugPrint(suggestion.localizedName);
               },
+              textFieldConfiguration: const TextFieldConfiguration(
+                decoration: InputDecoration(
+                  hintText: 'Search',
+                  border: OutlineInputBorder(),
+                ),
+              ),
             ),
             // Consumer<AutoCompleteController>(
             //   builder: (context, controller, child) {
