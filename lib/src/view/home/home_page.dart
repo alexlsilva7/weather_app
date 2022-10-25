@@ -55,20 +55,6 @@ class HomePage extends StatelessWidget {
                 ),
               ),
             ),
-            // Consumer<AutoCompleteController>(
-            //   builder: (context, controller, child) {
-            //     return Expanded(
-            //       child: ListView.builder(
-            //         itemCount: controller.results.length,
-            //         itemBuilder: (context, index) {
-            //           return ListTile(
-            //             title: Text(controller.results[index].localizedName!),
-            //           );
-            //         },
-            //       ),
-            //     );
-            //   },
-            // ),
           ],
         ),
       ),
